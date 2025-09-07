@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PSAppDeployToolkitGui.MainWindow"
+        Title="PSAppDeployToolkit GUI">
+    <dialogHost:DialogHost>
+        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*" Margin="10">
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Application Name:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="AppNameTextBox"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Application Version:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="AppVersionTextBox"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Publisher:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="PublisherTextBox"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Installer File:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <Grid Grid.Row="3" Grid.Column="1" ColumnDefinitions="*,Auto">
+                <TextBox Name="InstallerPathTextBox" IsReadOnly="True"/>
+                <Button Name="BrowseButton" Content="Browse..." Grid.Column="1" Click="BrowseButton_Click"/>
+            </Grid>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Installation Command:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="InstallCommandTextBox"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Uninstallation Command:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Name="UninstallCommandTextBox"/>
+
+            <Button Grid.Row="6" Grid.Column="1" Name="GenerateButton" Content="Generate Package" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="GenerateButton_Click"/>
+        </Grid>
+    </dialogHost:DialogHost>
+</Window>
